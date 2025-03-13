@@ -1,5 +1,6 @@
 import React from 'react';
-import { MockUser } from '../types';
+
+import { MockUser } from '../types'; // Adjust the import path as necessary
 
 interface PreviewProps {
     data: MockUser[];

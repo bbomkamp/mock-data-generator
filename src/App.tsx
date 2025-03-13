@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import DataForm from './components/DataForm';
 import Preview from './components/Preview';
-import { MockUser } from './types';
 import { generateMockData } from './utils/mockDataGenerator';
+import { MockUser } from './types';
 import './App.css';
 
 const App: React.FC = () => {
     const [mockData, setMockData] = useState<MockUser[]>([]);
     const [isDataGenerated, setIsDataGenerated] = useState<boolean>(false);
 
-    const handleDataGeneration = (count: number) => {
-        const data = generateMockData(count);
+    const handleDataGeneration = (count: number, fields: string[]) => {
+        const data = generateMockData(count, fields);
         setMockData(data);
         setIsDataGenerated(true);
     };
