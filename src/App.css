@@ -2,28 +2,50 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 15%; /* Add left margin to the container to avoid overlap with the sidebar */
+  min-width: 100%;
 }
 
 .flex {
   display: flex;
-  width: 100%;
+  width: 85%; /* Adjust the width of the flex container to account for the sidebar */
 }
 
 .left-panel {
-  width: 33.3333%;
-  padding-right: 1rem;
+  position: fixed; /* Fix the panel to the left side of the screen */
+  top: 0; /* Align the top of the panel with the top of the page */
+  left: 0; /* Align the left side of the panel with the left side of the page */
+  width: 15%; /* Set the width to 15% of the screen width */
+  height: 100vh; /* Extend the panel to the full height of the viewport */
+  padding: 1rem; /* Add padding inside the panel */
+  background-color: #000000; /* Optional: Add a background color for better visibility */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle 3D effect */
+  display: flex; /* Use Flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
 }
 
 .right-panel {
-  width: 66.6667%;
-  height: 24rem;
-  overflow-y: auto;
+  width: 85%; /* Adjust the width to take up the remaining space */
+  padding: 2rem; /* Add padding for spacing */
+  margin-left: 15%; /* Add left margin to avoid overlap with the sidebar */
+  display: flex; /* Use Flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the top */
+}
+
+.right-panel h1 {
+  margin-top: 0; /* Remove top margin */
+  text-align: center; /* Center the heading text */
 }
 
 .mt-4 {

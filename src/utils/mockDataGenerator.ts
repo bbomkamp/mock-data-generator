@@ -2,13 +2,16 @@ import { faker } from '@faker-js/faker';
 import { MockUser } from '../types';
 
 export const generateMockData = (count: number): MockUser[] => {
-    const data: MockUser[] = [];
+    const mockData: MockUser[] = [];
+
     for (let i = 0; i < count; i++) {
-        const firstName = faker.name.firstName();
-        const lastName = faker.name.lastName();
-        const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@testing.com`;
-        const birthday = faker.date.past(30, new Date()).toISOString().split('T')[0];
-        data.push({ firstName, lastName, email, birthday });
+        mockData.push({
+            firstName: faker.person.firstName(), // Updated from faker.name.firstName()
+            lastName: faker.person.lastName(), // Updated from faker.name.lastName()
+            email: faker.internet.email(),
+            birthday: faker.date.birthdate().toISOString().split('T')[0],
+        });
     }
-    return data;
+
+    return mockData;
 };
