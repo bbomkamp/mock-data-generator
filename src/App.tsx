@@ -34,7 +34,7 @@ const App: React.FC = () => {
                     <DataForm onGenerate={handleDataGeneration} />
                     <button
                         onClick={handleDownload}
-                        className={`bg-green-500 text-white px-4 py-2 rounded mt-4 ${!isDataGenerated ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`bg-green-500 text-white px-4 py-2 rounded mt-4 download-button ${!isDataGenerated ? 'opacity-50 cursor-not-allowed' : ''}`}
                         disabled={!isDataGenerated}
                     >
                         Download JSON

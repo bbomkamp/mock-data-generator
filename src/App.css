@@ -23,14 +23,26 @@
   top: 0; /* Align the top of the panel with the top of the page */
   left: 0; /* Align the left side of the panel with the left side of the page */
   width: 15%; /* Set the width to 15% of the screen width */
-  height: 100vh; /* Extend the panel to the full height of the viewport */
+  height: 96vh; /* Extend the panel to the full height of the viewport */
   padding: 1rem; /* Add padding inside the panel */
   background-color: #000000; /* Optional: Add a background color for better visibility */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle 3D effect */
   display: flex; /* Use Flexbox for centering */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
+  justify-content: space-between; /* Space between items to push the button to the bottom */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.download-button {
+  margin-top: auto; /* Push the button to the bottom */
+  align-self: center; /* Center the button horizontally */
 }
 
 .right-panel {
@@ -116,4 +128,18 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.preview-container {
+  width: 100%;
+  height: calc(100vh - 20rem); /* Adjust height to fit within the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #1a1a1a; /* Background color for better visibility */
+  padding: 1rem; /* Padding for spacing */
+  border-radius: 0.25rem; /* Optional: Rounded corners */
+}
+
+.preview-content {
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  color: #ffffff; /* Text color for better visibility */
 }
