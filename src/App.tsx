@@ -20,29 +20,29 @@ const App: React.FC = () => {
         const blob = new Blob([dataStr], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
+        const now = new Date();
+        const timestamp = now.toISOString().replace(/[:.]/g, '-');
         a.href = url;
-        a.download = 'mockData.json';
+        a.download = `mockData_${timestamp}.json`;
         a.click();
         URL.revokeObjectURL(url);
     };
 
     return (
-        <div className="container">
-            <h1 className="text-2xl font-bold mb-4">Mock Data Generator</h1>
-            <div className="flex">
-                <div className="left-panel">
-                    <DataForm onGenerate={handleDataGeneration} />
-                    <button
-                        onClick={handleDownload}
-                        className={`bg-green-500 text-white px-4 py-2 rounded mt-4 download-button ${!isDataGenerated ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        disabled={!isDataGenerated}
-                    >
-                        Download JSON
-                    </button>
-                </div>
-                <div className="right-panel">
-                    {isDataGenerated && <Preview data={mockData} />}
-                </div>
+        <div className="app-container">
+            <div className="left-panel">
+                <DataForm onGenerate={handleDataGeneration} />
+                <button
+                    onClick={handleDownload}
+                    className={`bg-green-500 text-white px-4 py-2 rounded mt-4 download-button ${!isDataGenerated ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    disabled={!isDataGenerated}
+                >
+                    Download JSON
+                </button>
+            </div>
+            <div className="right-panel">
+                <h1 className="text-2xl font-bold mb-4">Mock Data Generator</h1>
+                {isDataGenerated && <Preview data={mockData} />}
             </div>
         </div>
     );

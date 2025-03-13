@@ -132,7 +132,7 @@
 
 .preview-container {
   width: 100%;
-  height: calc(100vh - 20rem); /* Adjust height to fit within the viewport */
+  height: calc(100vh - 4rem); /* Adjust height to fit within the viewport */
   overflow-y: auto; /* Enable vertical scrolling */
   background-color: #1a1a1a; /* Background color for better visibility */
   padding: 1rem; /* Padding for spacing */
@@ -142,4 +142,9 @@
 .preview-content {
   white-space: pre-wrap; /* Preserve whitespace and wrap text */
   color: #ffffff; /* Text color for better visibility */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
 }
