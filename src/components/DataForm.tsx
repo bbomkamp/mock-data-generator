@@ -7,13 +7,13 @@ interface DataFormProps {
 const DataForm: React.FC<DataFormProps> = ({ onGenerate }) => {
     const [count, setCount] = useState<number>(1);
     const [selectedFields, setSelectedFields] = useState<string[]>([
-        'firstName',
-        'lastName'
+        'First Name',
+        'Last Name'
     ]);
 
     useEffect(() => {
         // Ensure firstName and lastName are selected by default
-        setSelectedFields(['firstName', 'lastName']);
+        setSelectedFields(['First Name', 'Last Name']);
     }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -48,23 +48,24 @@ const DataForm: React.FC<DataFormProps> = ({ onGenerate }) => {
                     <label className="block mb-2">Select fields to include:</label>
                     <div className="space-y-2">
                         {[
+                            'Prefix',
+                            'First Name',
+                            'Middle Name',
+                            'Last Name',
+                            'Full Name',
+                            'Suffix',
+                            'Email',
                             'Bio',
-                            'firstName',
-                            'fullName',
-                            'gender',
-                            'jobArea',
-                            'jobDescriptor',
-                            'jobTitle',
-                            'jobType',
-                            'lastName',
-                            'middleName',
-                            'prefix',
-                            'sex',
-                            'sexType',
-                            'suffix',
-                            'zodiacSign',
-                            'email',
-                            'birthday'
+                            'Birthday',
+                            'Gender',
+                            'Job Area',
+                            'Job Descriptor',
+                            'Job Title',
+                            'Job Type',
+                            'Sex',
+                            'Zodiac Sign'
+                            
+                            
                         ].map((field) => (
                             <div key={field}>
                                 <label>

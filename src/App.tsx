@@ -41,7 +41,7 @@ const App: React.FC = () => {
                 </button>
             </div>
             <div className="right-panel">
-                <h1 className="text-2xl font-bold mb-4">Mock Data Generator</h1>
+                <h1 className="text-2xl font-bold mb-4">Dummy Data</h1>
                 {isDataGenerated && <Preview data={mockData} />}
             </div>
         </div>
